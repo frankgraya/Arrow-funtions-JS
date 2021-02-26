@@ -1,23 +1,29 @@
-var time, position, resultados;
-var Nombre, apP, apM, Edad, nacimiento, Sexo; // variables Globales
-
-function obtenerDatos() {
-    Nombre = document.getElementById("Nombre").value;
-    apP = document.getElementById("apP").value;
-    apM = document.getElementById("apM").value;
-    Edad = document.getElementById("Edad").value;
-    nacimiento = document.getElementById("nacimiento").value;
-    Sexo = document.getElementById("Sexo").value;
-
-    var r = [Nombre, apP, apM, Edad, nacimiento, Sexo];
-    return r;
+// Función tradicional
+function(a) {
+    return a + 100;
 }
 
-var input = document.getElementsByTagName("INPUT");
+function(a, b) {
+    return a + b + 100;
+}
 
-for (i = 0; i < input.length; i++) {
-    input[i].addEventListener("change", function() {
-        resultados = obtenerDatos();
-        console.log(resultados);
-    });
-};
+// Desglose de la función flecha
+
+// 1. Elimina la palabra "function" y coloca la flecha entre el argumento y el corchete de apertura.
+(a) => {
+    return a + 100;
+}
+
+(a, b) => a + b + 100;
+
+// 2. Quita los corchetes del cuerpo y la palabra "return" — el return está implícito.
+(a) => a + 100;
+
+// 3. Suprime los paréntesis de los argumentos
+a => a + 100;
+
+
+param => {
+    let a = 1;
+    return a + b;
+}
